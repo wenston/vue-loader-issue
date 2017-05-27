@@ -1,21 +1,23 @@
-
-<style module lang="scss">
+<docs>
+  ### indexApp 组件哦
+  * hhehe
+  * h3h3h
+</docs>
+<style module scoped>
   .list {
     background:black;
-    > li {
-      color:#fff;
-    }
   }
+  .list > li {color:#fff;}
 </style>
 
 <template>
   <div>
-    <ul :class="$style.list">
+    <ul class="list">
       <li v-for="(item,index) in dataList" @click="alert">{{item.name}}</li>
     </ul>
   </div>
 </template>
-<script>
+<script lang="js">
   export default {
     data() {
       return {

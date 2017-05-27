@@ -58,6 +58,8 @@ module.exports = {
               camelCase: true
             },
             loaders: {
+              es6: 'babel-loader?presets=es2015',
+              docs: ExtractTextPlugin.extract('raw-loader'),
               scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
               sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
             }
@@ -73,6 +75,7 @@ module.exports = {
     }
   },
   plugins: [
+    new ExtractTextPlugin('md/docs.md'),
     new HtmlWebpackPlugin({
       filename:path.resolve(__dirname,'./dist/index.html'),
       template:path.resolve(__dirname,'./src/views/home/index.html'),
